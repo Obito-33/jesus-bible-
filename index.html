@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f4ec">
+  <meta name="description" content="Still With Jesus — a peaceful place to read, listen to and reflect on the Bible.">
+  <title>Still With Jesus | Daily Verse & Bible</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Still With Jesus home"><span class="brand-cross">✝</span><span>STILL <b>WITH</b> JESUS</span></a>
+    <nav><a href="#daily">Daily Verse</a><a href="#reader">Read Bible</a></nav>
+    <label class="language-top">Language
+      <select id="languageSelect" aria-label="Choose Bible language"><option value="">Loading languages…</option></select>
+    </label>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-glow"></div>
+      <p class="eyebrow">A QUIET MOMENT WITH GOD</p>
+      <h1>Be still. Breathe.<br><em>Stay with Jesus.</em></h1>
+      <p class="hero-copy">A peaceful place to read His Word, listen, and find a little light for today.</p>
+      <a class="primary-button" href="#daily">Discover today's verse <span>→</span></a>
+      <div class="hero-cross" aria-hidden="true">✝</div>
+      <p class="touch-hint">Touch anywhere to release a little joy ✦</p>
+    </section>
+
+    <section class="section daily-section" id="daily">
+      <div class="section-heading"><p class="eyebrow">YOUR MOMENT OF GRACE</p><h2>Daily Verse</h2><p>Choose your name, date and language to find a verse for your day.</p></div>
+      <div class="panel daily-panel">
+        <div class="form-grid">
+          <label>Your name<input id="visitorName" type="text" maxlength="60" placeholder="Enter your name"></label>
+          <label>Select date<input id="verseDate" type="date"></label>
+        </div>
+        <button class="primary-button full" id="getVerseBtn">Get My Daily Verse <span>✦</span></button>
+        <p class="status" id="sourceStatus" role="status" aria-live="polite">Connecting to the Bible library…</p>
+        <article class="verse-card" id="dailyResult" hidden>
+          <p class="verse-greeting" id="greetingText"></p>
+          <p class="verse-label">A VERSE FOR YOUR DAY</p>
+          <blockquote id="verseText"></blockquote>
+          <p class="verse-reference" id="verseReference"></p>
+          <div class="listen-settings">
+            <label>Listen in which language?
+              <select id="dailyVoiceLanguage"><option value="">Loading device voices…</option></select>
+            </label>
+            <div class="button-row">
+              <button class="soft-button" id="dailyListenBtn">▶ Listen</button>
+              <button class="soft-button" id="dailyStopBtn">■ Stop</button>
+              <button class="soft-button" id="dailyExplainBtn">✧ Explain</button>
+            </div>
+          </div>
+          <div class="explain-area" id="dailyExplanation" hidden></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section reader-section" id="reader">
+      <div class="section-heading"><p class="eyebrow">OPEN THE WORD</p><h2>Read the Bible</h2><p>Explore the books and chapters available in your chosen translation.</p></div>
+      <div class="panel reader-panel">
+        <div class="reader-controls">
+          <label>Bible translation<select id="translationSelect"><option value="">Loading translations…</option></select></label>
+          <label>Book<select id="bookSelect" disabled><option value="">Choose a book</option></select></label>
+          <label>Chapter<select id="chapterSelect" disabled><option value="">Chapter</option></select></label>
+        </div>
+        <div class="reader-toolbar">
+          <div class="mode-switch" role="group" aria-label="Explanation style">
+            <button class="mode-button active" data-mode="modern">Modern explanation</button>
+            <button class="mode-button" data-mode="traditional">Traditional explanation</button>
+            <button class="mode-button" data-mode="both">Both explanations</button>
+          </div>
+          <div class="reader-audio-settings">
+            <label>Listen voice language
+              <select id="readerVoiceLanguage"><option value="">Loading device voices…</option></select>
+            </label>
+            <label>Audio type
+              <select id="readerAudioMode">
+                <option value="device">Device voice</option>
+                <option value="recorded">Bible recording (when available)</option>
+              </select>
+            </label>
+            <div class="button-row">
+              <button class="soft-button" id="readListenBtn">▶ Listen</button>
+              <button class="soft-button" id="stopListenBtn">■ Stop</button>
+            </div>
+          </div>
+        </div>
+        <p class="status" id="readerStatus" role="status" aria-live="polite">Choose a translation, book and chapter. Modern and traditional buttons show study reflections; the Bible wording itself comes from the selected translation.</p>
+        <div class="chapter-content" id="chapterContent"><div class="empty-state"><span>✝</span><p>Your reading journey begins here.</p></div></div>
+      </div>
+    </section>
+
+    <section class="closing">
+      <span>✧</span><p>“The Lord is my shepherd; I shall not want.”</p><small>PSALM 23:1 · A MOMENT OF PEACE</small>
+    </section>
+  </main>
+  <footer>STILL WITH JESUS <span>•</span> Made for quiet moments and faithful hearts</footer>
+  <div id="effectsLayer" aria-hidden="true"></div>
+  <noscript>This website needs JavaScript enabled to load Bible translations and chapters.</noscript>
+</body>
+</html>
